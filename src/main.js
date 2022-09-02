@@ -10,10 +10,16 @@ var makeCoverButton = document.querySelector(".make-new-button")
 var homeButton = document.querySelector(".home-button.hidden")
 var saveButton = document.querySelector(".save-cover-button")
 var viewSavedButton = document.querySelector(".view-saved-button")
+var makeMyBookButton = document.querySelector(".create-new-book-button")
 
 var formPageElement = document.querySelector(".view.form-view.hidden")
 var homePageElement = document.querySelector(".view.home-view")
 var savedPageElement = document.querySelector(".view.saved-view.hidden")
+
+var coverInput = document.querySelector(".user-cover")
+var titleInput = document.querySelector(".user-title")
+var firstDescriptorInput = document.querySelector(".user-desc1")
+var secondDescriptorInput = document.querySelector(".user-desc2")
 
 
 var currentCover
@@ -39,6 +45,7 @@ randomCoverButton.addEventListener("click", createRandomCover)
 makeCoverButton.addEventListener("click",loadForm)
 viewSavedButton.addEventListener("click", loadSavedCovers)
 homeButton.addEventListener("click", loadHomePage)
+makeMyBookButton.addEventListener("click", makeMyBookForm)
 // Create your event handlers and other functions here 👇
 
 
@@ -80,6 +87,10 @@ function loadHomePage() {
   randomCoverButton.classList.remove("hidden")
   saveButton.classList.remove("hidden")
   homeButton.classList.add("hidden")
+}
+
+function makeMyBookForm() {
+  var userInstance = new Class
 }
 
 
