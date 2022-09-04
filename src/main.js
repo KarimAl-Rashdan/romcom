@@ -17,10 +17,12 @@ var formPageElement = document.querySelector(".view.form-view.hidden")
 var homePageElement = document.querySelector(".view.home-view")
 var savedPageElement = document.querySelector(".view.saved-view.hidden")
 
+
 var coverInput = document.querySelector(".user-cover")
 var titleInput = document.querySelector(".user-title")
 var firstDescriptorInput = document.querySelector(".user-desc1")
 var secondDescriptorInput = document.querySelector(".user-desc2")
+
 
 var savedCoversSection = document.querySelector(".saved-covers-section")
 
@@ -34,6 +36,7 @@ var savedCovers = [
 
 // Add your event listeners here 👇
 
+
 window.addEventListener("load", createRandomCover)
 randomCoverButton.addEventListener("click", createRandomCover)
 makeCoverButton.addEventListener("click", loadForm)
@@ -42,6 +45,7 @@ homeButton.addEventListener("click", loadHomePage)
 makeMyBookButton.addEventListener("click", makeMyBookForm)
 saveButton.addEventListener("click", saveCurrentCover)
 savedCoversSection.addEventListener("dblclick", deleteSavedCover)
+
 
 // Create your event handlers and other functions here 👇
 // We've provided one function to get you started
@@ -53,10 +57,13 @@ function getRandomIndex(array) {
 function createRandomCover() {
   currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 
+
+
   htmlCoverImage.src = currentCover.cover
   htmlTitle.innerText = currentCover.title
   htmlTagline1.innerText = currentCover.tagline1
   htmlTagline2.innerText = currentCover.tagline2
+
 }
 
 function loadForm() {
@@ -190,4 +197,11 @@ function deleteSavedCover(event){
     }
 
   }
+
 }
+
+
+//
+// function saveCover() {
+//   savedCovers.push(currentCover)
+// }
