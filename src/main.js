@@ -106,7 +106,7 @@ function makeMyBookForm() {
 }
 
 function createCoverHTML() {
-  var savedSubSection = document.createElement("section"); //refactor helper function
+  var savedSubSection = document.createElement("section");
   var savedImage = document.createElement("img");
   var savedTitle = document.createElement("h2");
   var savedTagline = document.createElement("h3");
