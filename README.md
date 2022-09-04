@@ -1,9 +1,9 @@
 # RomCom
 
-A boilerplate repo. 
+A boilerplate repo.
 
 ## Set Up
-1. ONE teammate: fork this boilerplate repository 
+1. ONE teammate: fork this boilerplate repository
 2. Clone down your new, forked repo
 3. cd into the repository
 4. Open it in your text editor
@@ -20,7 +20,9 @@ ______________________________________________________
 # RomCom  
 
 ### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+We built a webpage that generates romance novel covers either randomly or the user can input data to generate a custom cover. The webpage gives users the option to save covers and view saved covers. The webpage provides users the means to view/create romance novel covers for entertainment purposes.
+
+//(Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
 
 ### Installation Instructions:
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
