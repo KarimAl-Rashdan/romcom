@@ -31,6 +31,7 @@ var savedCovers = [
 
 
 window.addEventListener("load", createRandomCover);
+window.addEventListener("load", createCoverHTML);
 randomCoverButton.addEventListener("click", createRandomCover);
 makeCoverButton.addEventListener("click", loadForm);
 viewSavedButton.addEventListener("click", loadSavedCovers);
@@ -109,6 +110,54 @@ function makeMyBookForm() {
   }
 }
 
+function createCoverHTML() {
+  var savedSubSection = document.createElement("section"); //refactor helper function
+  var savedImage = document.createElement("img");
+  var savedTitle = document.createElement("h2");
+  var savedTagline = document.createElement("h3");
+  var savedPriceTag = document.createElement("img");
+  var savedOverlay = document.createElement("img");
+
+  savedSubSection.classList.add("mini-cover");
+  savedSubSection.id = savedCovers[savedCovers.length-1].id;
+
+  savedImage.classList.add("mini-cover");
+  savedImage.src = savedCovers[savedCovers.length-1].cover;
+
+  savedTitle.classList.add("cover-title");
+  savedTitle.innerText = savedCovers[savedCovers.length-1].title;
+
+  savedTagline.classList.add("tagline");
+  var spanClass1 = document.createElement("span");
+  spanClass1.classList.add("tagline-1");
+  spanClass1.innerText = savedCovers[savedCovers.length-1].tagline1;
+
+  var spanClass2 = document.createElement("span");
+  spanClass2.classList.add("tagline-2");
+  spanClass2.innerText = savedCovers[savedCovers.length-1].tagline2;
+
+  var taglineText1 = document.createTextNode("A tale of ");
+  var taglineText2 = document.createTextNode(" and ");
+  savedTagline.appendChild(taglineText1);
+  savedTagline.appendChild(spanClass1);
+  savedTagline.appendChild(taglineText2);
+  savedTagline.appendChild(spanClass2);
+
+  savedPriceTag.classList.add("price-tag");
+  savedPriceTag.src = "./assets/price.png";
+
+  savedOverlay.classList.add("overlay");
+  savedOverlay.src = "./assets/overlay.png";
+
+  savedSubSection.appendChild(savedImage);
+  savedSubSection.appendChild(savedTitle);
+  savedSubSection.appendChild(savedTagline);
+  savedSubSection.appendChild(savedPriceTag);
+  savedSubSection.appendChild(savedOverlay);
+
+  savedCoversSection.appendChild(savedSubSection);
+}
+
 function saveCurrentCover() {
   var currentCoverValues = `${currentCover.cover}${currentCover.title}${currentCover.tagline1}${currentCover.tagline2}`;
   for (var i = 0; i < savedCovers.length; i++) {
@@ -118,52 +167,7 @@ function saveCurrentCover() {
     }
   }
   savedCovers.push(currentCover);
-
-    var savedSubSection = document.createElement("section"); //refactor helper function
-    var savedImage = document.createElement("img");
-    var savedTitle = document.createElement("h2");
-    var savedTagline = document.createElement("h3");
-    var savedPriceTag = document.createElement("img");
-    var savedOverlay = document.createElement("img");
-
-    savedSubSection.classList.add("mini-cover");
-    savedSubSection.id = savedCovers[savedCovers.length-1].id;
-
-    savedImage.classList.add("mini-cover");
-    savedImage.src = savedCovers[savedCovers.length-1].cover;
-
-    savedTitle.classList.add("cover-title");
-    savedTitle.innerText = savedCovers[savedCovers.length-1].title;
-
-    savedTagline.classList.add("tagline");
-    var spanClass1 = document.createElement("span");
-    spanClass1.classList.add("tagline-1");
-    spanClass1.innerText = savedCovers[savedCovers.length-1].tagline1;
-
-    var spanClass2 = document.createElement("span");
-    spanClass2.classList.add("tagline-2");
-    spanClass2.innerText = savedCovers[savedCovers.length-1].tagline2;
-
-    var taglineText1 = document.createTextNode("A tale of ");
-    var taglineText2 = document.createTextNode(" and ");
-    savedTagline.appendChild(taglineText1);
-    savedTagline.appendChild(spanClass1);
-    savedTagline.appendChild(taglineText2);
-    savedTagline.appendChild(spanClass2);
-
-    savedPriceTag.classList.add("price-tag");
-    savedPriceTag.src = "./assets/price.png";
-
-    savedOverlay.classList.add("overlay");
-    savedOverlay.src = "./assets/overlay.png";
-
-    savedSubSection.appendChild(savedImage);
-    savedSubSection.appendChild(savedTitle);
-    savedSubSection.appendChild(savedTagline);
-    savedSubSection.appendChild(savedPriceTag);
-    savedSubSection.appendChild(savedOverlay);
-
-    savedCoversSection.appendChild(savedSubSection);
+  createCoverHTML();
 }
 
 function deleteSavedCover(event) {
