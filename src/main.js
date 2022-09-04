@@ -132,10 +132,19 @@ function viewSavedCovers(){
 }
 
 function saveCurrentCover() {
-  if (!savedCovers.includes(currentCover)){
-  savedCovers.push(currentCover)
-
+  var currentCoverValues = `${currentCover.cover}${currentCover.title}${currentCover.tagline1}${currentCover.tagline2}`
+  for (var i = 0; i < savedCovers.length; i++){
+    var savedCoverValues = `${savedCovers[i].cover}${savedCovers[i].title}${savedCovers[i].tagline1}${savedCovers[i].tagline2}`
+    if (currentCoverValues === savedCoverValues){
+      return
+    }
   }
+savedCovers.push(currentCover)
+
+
+
+
+
 //display first, redeploy fxn here
 //clear the saved covers section (var name), then savedCoversSection.innerHTML = ""
 
