@@ -26,6 +26,8 @@ ______________________________________________________
 [//]: <> (What steps does a person have to take to get your app cloned down and running?)
 
 ### Preview of App:
+<img width="1440" alt="RomCom Screenshot" src="https://user-images.githubusercontent.com/108764281/188329142-d3f87393-6e17-4965-96bc-cec475cb8d11.png">
+
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
 ### Context:
