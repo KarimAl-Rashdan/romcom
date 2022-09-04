@@ -188,10 +188,15 @@ function saveCurrentCover() {
 //display first function - don't push just dsiplay
 
 }
-
 function deleteSavedCover(event){
-  console.log(event.target.parentElement);
   miniCoverID = event.target.parentElement
+  for(var i = 0; i< savedCovers.length; i++) {
+    if(savedCovers[i].id.toString() === miniCoverID.id) {
+      savedCovers.splice(i, 1)
+      miniCoverID.remove()
+    }
+
+  }
 
 }
 
