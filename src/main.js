@@ -84,12 +84,7 @@ function loadHomePage() {
 function makeMyBookForm() {
   currentCover = new Cover(coverInput.value, titleInput.value, firstDescriptorInput.value, secondDescriptorInput.value);
 
-  savedPageElement.classList.add("hidden"); //refactor
-  formPageElement.classList.add("hidden");
-  homePageElement.classList.remove("hidden");
-  homeButton.classList.add("hidden");
-  saveButton.classList.remove("hidden");
-  randomCoverButton.classList.remove("hidden");
+  loadHomePage();
 
   htmlCoverImage.src = currentCover.cover;
   htmlTitle.innerText = currentCover.title;
