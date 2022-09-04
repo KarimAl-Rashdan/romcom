@@ -1,8 +1,8 @@
 
-var htmlCoverImage = document.querySelector(".cover-image");
-var htmlTitle = document.querySelector(".cover-title");
-var htmlTagline1 = document.querySelector(".tagline-1");
-var htmlTagline2 = document.querySelector(".tagline-2");
+var homeCoverImage = document.querySelector(".cover-image");
+var homeTitle = document.querySelector(".cover-title");
+var homeTagline1 = document.querySelector(".tagline-1");
+var homeTagline2 = document.querySelector(".tagline-2");
 
 var randomCoverButton = document.querySelector(".random-cover-button");
 var makeCoverButton = document.querySelector(".make-new-button");
@@ -48,10 +48,10 @@ function getRandomIndex(array) {
 function createRandomCover() {
   currentCover = new Cover(covers[getRandomIndex(covers)], titles[getRandomIndex(titles)], descriptors[getRandomIndex(descriptors)], descriptors[getRandomIndex(descriptors)]);
 
-  htmlCoverImage.src = currentCover.cover;
-  htmlTitle.innerText = currentCover.title;
-  htmlTagline1.innerText = currentCover.tagline1;
-  htmlTagline2.innerText = currentCover.tagline2;
+  homeCoverImage.src = currentCover.cover;
+  homeTitle.innerText = currentCover.title;
+  homeTagline1.innerText = currentCover.tagline1;
+  homeTagline2.innerText = currentCover.tagline2;
 }
 
 function loadForm() {
@@ -86,10 +86,10 @@ function makeMyBookForm() {
 
   loadHomePage();
 
-  htmlCoverImage.src = currentCover.cover;
-  htmlTitle.innerText = currentCover.title;
-  htmlTagline1.innerText = currentCover.tagline1;
-  htmlTagline2.innerText = currentCover.tagline2;
+  homeCoverImage.src = currentCover.cover;
+  homeTitle.innerText = currentCover.title;
+  homeTagline1.innerText = currentCover.tagline1;
+  homeTagline2.innerText = currentCover.tagline2;
 
   if (!covers.includes(currentCover.cover)) {
     covers.push(currentCover.cover);
